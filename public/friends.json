@@ -1,26 +1,4 @@
-'use client'
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import Navbar from '../app/Navbar/page'
-
-import { config } from '@fortawesome/fontawesome-svg-core'
-import '@fortawesome/fontawesome-svg-core/styles.css'
-import { createContext } from "react";
-import Footer from "./Footer/page";
-config.autoAddCss = false;
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-export const  LengthOfTotal = createContext();
-
-  const friends  =  [
+ [
   {
     "id": 1,
     "name": "John Doe",
@@ -166,48 +144,3 @@ export const  LengthOfTotal = createContext();
     "next_due_date": "2025-03-20"
   }
 ]
-
-
-
-
-
-export default function RootLayout({ children }) {
-
-    let total = friends.length;
-
-       let on_track =0;
-       let need_attention =0;
-
-       for( let friend of friends){
-        if(friend.status === "overdue") need_attention++;
-        if(friend.status === "active") on_track++;
-       }
-
-
-       let data = {
-        friends,
-        total,
-        on_track,
-        need_attention,
-       
-       }
-  return (
-    <html
-      lang="en"
-     className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-     
-      <body className="min-h-full flex flex-col">
-
-         <Navbar></Navbar>
-
-     <LengthOfTotal.Provider value={data}>
-      {children}
-     </LengthOfTotal.Provider>
-
-       <Footer></Footer>
-
-        </body>
-    </html>
-  );
-}
