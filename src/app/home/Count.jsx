@@ -1,10 +1,13 @@
 'use client'
 import React, { useContext } from 'react';
 import { LengthOfTotal } from '../layout';
+import { historyContext } from '../Context/Contextpage';
 
 const Count = () => {
 
     const {total,on_track,need_attention} = useContext(LengthOfTotal);
+
+    const {arr} =useContext(historyContext);
     
     return (
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-10 gap-3'>
@@ -27,9 +30,9 @@ const Count = () => {
                 
             </div>
             <div className='bg-gray-100 shadow-2xl px-10 py-5'>
-                <h1 className='text-xl font-bold text-center'>12</h1>
+                <h1 className='text-xl font-bold text-center'>{arr.length}</h1>
 
-                <p className='text-gray-500 text-center'>total friends</p>
+                <p className='text-gray-500 text-center'>Interactions This Month</p>
                 
             </div>
             

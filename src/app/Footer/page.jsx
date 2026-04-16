@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <div className="bg-[#1f4f46] text-white py-10 px-4 mt-20">
+    <div className="bg-[#1f4f46] text-white py-10 px-4 mt-60">
       <div className="max-w-5xl mx-auto  p-6 text-center">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">KeenKeeper</h1>
         <p className="text-sm md:text-base text-gray-200 mb-6 max-w-2xl mx-auto">

@@ -7,6 +7,8 @@ import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import { createContext } from "react";
 import Footer from "./Footer/page";
+import Contextpage from "./Context/Contextpage";
+import InteractionContex from "./Context/InteractionContex";
 config.autoAddCss = false;
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -201,10 +203,15 @@ export default function RootLayout({ children }) {
 
          <Navbar></Navbar>
 
-     <LengthOfTotal.Provider value={data}>
+     
+      <InteractionContex>
+        <Contextpage>
+           <LengthOfTotal.Provider value={data}>
       {children}
      </LengthOfTotal.Provider>
-
+      </Contextpage>
+      </InteractionContex>
+    
        <Footer></Footer>
 
         </body>
