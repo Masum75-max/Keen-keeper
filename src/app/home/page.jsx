@@ -5,6 +5,7 @@ import Count from "./Count";
 import Dash from "./Dash";
 import Friend from "./Friend";
 import { LengthOfTotal } from "../layout";
+import { Suspense } from "react";
 
 const Homepage = () => {
 
@@ -18,12 +19,14 @@ const { friends }  =  useContext(LengthOfTotal);
 
           <h1 className="text-2xl font-bold my-10">Total Friends</h1>
 
-          <div className="grid grid-cols-1 gap-2  md:grid-cols-3 lg:grid-cols-4">
-            {
-            friends.map(friend=><Friend key={friend.id} friend={friend}></Friend>)
-          }
-          
-          </div>
+
+<Suspense  fallback={<span className="loading loading-spinner loading-xl flex items-center justify-center"></span>}>
+  <div className="grid grid-cols-1 gap-2 md:grid-cols-3 lg:grid-cols-4">
+    {friends.map(friend => (
+      <Friend key={friend.id} friend={friend} />
+    ))}
+  </div>
+</Suspense>
         </div>
     );
 };
