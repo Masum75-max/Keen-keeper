@@ -1,4 +1,5 @@
-export default function Footer() {
+
+import { FaInstagram, FaFacebook, FaWhatsapp } from "react-icons/fa";export default function Footer() {
   return (
     <div className="bg-[#1f4f46] text-white py-10 px-4 mt-60">
       <div className="max-w-5xl mx-auto  p-6 text-center">
@@ -11,13 +12,13 @@ export default function Footer() {
 
         <div className="flex justify-center gap-4 mb-8">
           <div className="w-10 h-10 flex items-center justify-center rounded-full bg-white text-black">
-            <i className="fab fa-instagram"></i>
+            <FaInstagram />
           </div>
           <div className="w-10 h-10 flex items-center justify-center rounded-full bg-white text-black">
-            <i className="fab fa-facebook-f"></i>
+            <FaFacebook />
           </div>
           <div className="w-10 h-10 flex items-center justify-center rounded-full bg-white text-black">
-            <i className="fab fa-x-twitter"></i>
+           <FaWhatsapp />
           </div>
         </div>
 

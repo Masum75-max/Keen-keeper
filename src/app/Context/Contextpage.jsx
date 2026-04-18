@@ -10,6 +10,8 @@ const Contextpage = ({children}) => {
 
     const addToArr = (item,type,timeAndDate) => {
 
+        
+
          item.type = type;
          item.timeAndDate = timeAndDate;
         setArr([...arr, item]);
