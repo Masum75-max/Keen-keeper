@@ -9,11 +9,17 @@ const Timelinepage = () => {
     const { arr } = useContext(historyContext);
     const { type,typeHandler } = useContext(typeContext);
 
-    console.log(arr);
+    
     return (
         <div className='w-4/5 mx-auto'>
         
             <h1 className='text-2xl font-bold my-4'>TimeLine</h1>
+
+          {arr.length === 0 && (
+  <p className='text-gray-500 text-center mt-10'>
+    No interactions yet. Start connecting with your friends!
+  </p>
+)}
 
             <div className="dropdown dropdown-end">
   <div tabIndex={0} role="button" className="btn m-1">Filter By</div>
